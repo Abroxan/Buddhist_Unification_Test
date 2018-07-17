@@ -1,0 +1,42 @@
+﻿add_namespace = nepal
+
+country_event = {
+	id = nepal.1
+	title = nepal.1.t
+	desc = nepal.1.d
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	#Submit to Tibet
+	option = {
+			name = nepal.1.a
+			ai_chance = {
+				factor = 80
+			}
+			
+			TIB = {
+				country_event = {  
+					id = tibet.2 
+				}
+			
+			}
+	}
+	
+	#Fight to the end!
+	option = {
+		name = nepal.1.b
+		ai_chance = {
+			factor = 20
+		}
+		
+		TIB = {
+				country_event = { 
+					days = 1 
+					id = tibet.3 
+				}
+			
+		}
+	}
+	
+}

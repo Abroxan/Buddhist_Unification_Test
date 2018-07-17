@@ -1,0 +1,172 @@
+﻿add_namespace = tibet
+
+country_event = {
+	id = tibet.1
+	title = tibet.1.t
+	desc = tibet.1.d
+	picture = GFX_report_event_chinese_army_training
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIB
+		date > 1936.01.01
+		date < 1936.01.07
+	}
+	
+	#Attack Nepal
+	option = {
+		name = tibet.1.a
+		
+		add_threat = 2
+		
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = NEP
+		}
+	}
+	
+	#Pressure Nepal to become a puppet (Or war)
+	option = {
+		name = tibet.1.b
+		
+		NEP = {
+			country_event = {
+				id = nepal.1
+				days = 1
+			}
+		}
+		
+	}
+	
+	#Ignore Nepal. May lead to civil war!
+	option = {
+		name = tibet.1.c
+		
+		country_event = {
+			id = tibet.4
+			days = 1
+		}
+		
+	}
+}
+
+country_event = {
+	id = tibet.2
+	title = tibet.2.t
+	desc = tibet.2.d
+	picture = GFX_report_event_asian_politicians
+	
+	is_triggered_only = yes
+	
+	#Nepal submits
+	option = {
+		name = tibet.2.a
+		
+		puppet = NEP	
+	}
+	
+}
+
+country_event = {
+	id = tibet.3
+	title = tibet.3.t
+	desc = tibet.3.d
+	picture = report_event_japanese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	#Nepal resists
+	option = {
+		name = tibet.3.a
+		
+		declare_war_on = {
+			target = NEP
+			type = annex_everything
+		}	
+	}	
+}
+
+country_event = {
+	id = tibet.4
+	title = tibet.4.t
+	desc = tibet.4.d
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes
+	
+	#Ignore protests
+	option = {
+		name = tibet.4.a
+
+		country_event = {
+			id = tibet.5
+			days = 1
+		}
+	}
+	
+	#Attack the rioters
+	option = {
+		name = tibet.4.b
+		
+		country_event = {
+			id = tibet.6
+			days = 1
+		}
+	}
+	
+}
+
+country_event = {
+	id = tibet.5
+	title = tibet.5.t
+	desc = tibet.5.d
+	picture = GFX_report_event_japanese_siam_politicians
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tibet.5.a
+		
+		set_politics = {
+			parties = {
+				democratic = { 
+					popularity = 0
+				}
+
+				fascism = {
+					popularity = 100
+				}
+		
+				communism = {
+					popularity = 0
+				}
+		
+				neutrality = { 
+					popularity = 0
+				}
+			}
+	
+		ruling_party = fascism
+		}	
+	}
+	
+}
+
+country_event = {
+	id = tibet.6
+	title = tibet.6.t
+	desc = tibet.6.d
+	picture = GFX_report_event_stalin_propaganda
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tibet.6.a
+		
+		start_civil_war = {
+			ideology = communism
+		}
+	}
+	
+}
