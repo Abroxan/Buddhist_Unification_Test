@@ -31,11 +31,10 @@ country_event = {
 		}
 		
 		TIB = {
-				country_event = { 
-					days = 1 
-					id = tibet.3 
-				}
-			
+			country_event = { 
+				days = 1 
+				id = tibet.3 
+			}	
 		}
 	}
 	
